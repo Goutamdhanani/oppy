@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 import { ProgressProvider } from './context/ProgressContext';
 import { GamificationProvider } from './context/GamificationContext';
+import './components/Visualizer/visualizer.css';
 
 const App: React.FC = () => {
   return (

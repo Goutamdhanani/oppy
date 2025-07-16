@@ -1,0 +1,148 @@
+/* Algorithm Visualizer Animations */
+
+@keyframes glow {
+    0% {
+      box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+    }
+  }
+  
+  .element-highlight {
+    animation: glow 2s infinite;
+  }
+  
+  @keyframes swap {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .element-swap {
+    animation: swap 1s ease-in-out;
+  }
+  
+  /* Code highlighting */
+  .code-highlight {
+    background-color: rgba(99, 102, 241, 0.1);
+    border-left: 3px solid #6366f1;
+    display: block;
+    margin: 0 -1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Visualization controls */
+  .speed-control {
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: #e5e7eb;
+    outline: none;
+    transition: background 0.2s;
+  }
+  
+  .speed-control::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #6366f1;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .speed-control::-webkit-slider-thumb:hover {
+    background: #4f46e5;
+    transform: scale(1.1);
+  }
+  
+  .speed-control::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #6366f1;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+  
+  .speed-control::-moz-range-thumb:hover {
+    background: #4f46e5;
+    transform: scale(1.1);
+  }
+  
+  /* Button hover effects */
+  .control-button {
+    transition: all 0.2s;
+  }
+  
+  .control-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+  
+  .control-button:active {
+    transform: translateY(0px);
+  }
+  
+  /* Array bar animation */
+  @keyframes pulse-bar {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+  }
+  
+  .pulse-bar {
+    animation: pulse-bar 2s infinite;
+  }
+  
+  /* Progress indicator */
+  .progress-bar {
+    transition: width 0.3s ease-out;
+  }
+  
+  .progress-indicator {
+    position: relative;
+  }
+  
+  .progress-indicator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white);
+  }
+  
+  /* Tooltip styles */
+  .algorithm-tooltip {
+    position: relative;
+  }
+  
+  .algorithm-tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: #1f2937;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+  }
+  
+  .algorithm-tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 5px);
+  }

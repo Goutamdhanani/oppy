@@ -1,0 +1,250 @@
+/* Premium Animation Effects for Algorithm Visualizer */
+
+/* Background Grid Animation */
+@keyframes gridPulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0.3; }
+  }
+  
+  .grid-background {
+    background-image: 
+      linear-gradient(rgba(226, 232, 240, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(226, 232, 240, 0.3) 1px, transparent 1px);
+    background-size: 25px 25px;
+    z-index: 0;
+    animation: gridPulse 10s ease-in-out infinite;
+  }
+  
+  /* Electric Pulse Animation */
+  @keyframes electricPulse {
+    0% { box-shadow: 0 0 0px rgba(234, 179, 8, 0); }
+    50% { box-shadow: 0 0 15px rgba(234, 179, 8, 0.8); }
+    100% { box-shadow: 0 0 0px rgba(234, 179, 8, 0); }
+  }
+  
+  .pulse-animation {
+    animation: electricPulse 1.5s ease-in-out infinite;
+  }
+  
+  /* Swap Blur Effect */
+  .swap-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px);
+    opacity: 0.5;
+    z-index: -1;
+  }
+  
+  /* Shimmer effect for active elements */
+  @keyframes shimmer {
+    0% { 
+      background-position: -200% 0; 
+      opacity: 0.3;
+    }
+    100% { 
+      background-position: 200% 0; 
+      opacity: 0.6;
+    }
+  }
+  
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.5) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  /* Floating animation for elements */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Timeline scrubber styling */
+  .timeline-track {
+    height: 4px;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    transition: height 0.2s;
+  }
+  
+  .timeline-track:hover {
+    height: 8px;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    transition: opacity 0.2s;
+  }
+  
+  .timeline-marker:hover {
+    opacity: 1 !important;
+  }
+  
+  .timeline-thumb {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    cursor: grab;
+    z-index: 10;
+  }
+  
+  .timeline-thumb:active {
+    cursor: grabbing;
+    transform: translateY(-50%) scale(1.2);
+  }
+  
+  /* Director's tip box */
+  .directors-tip {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    border-left: 3px solid #8b5cf6;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: tipPulse 5s ease-in-out infinite;
+  }
+  
+  @keyframes tipPulse {
+    0% { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3); }
+    100% { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); }
+  }
+  
+  /* Cyberpunk theme elements */
+  .cyberpunk-text {
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+  }
+  
+  .cyberpunk-border {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cyberpunk-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0, transparent);
+    animation: cyberpunkBorder 3s linear infinite;
+  }
+  
+  @keyframes cyberpunkBorder {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  /* Neon theme elements */
+  .neon-text {
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.8);
+  }
+  
+  .neon-box {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  }
+  
+  /* Element comparison animation */
+  @keyframes compareVibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .compare-vibrate {
+    animation: compareVibrate 0.3s ease-in-out;
+  }
+  
+  /* Sparkle effects */
+  .sparkle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  @keyframes sparkle {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+  }
+  
+  /* Victory animation when algorithm completes */
+  @keyframes victoryPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  .victory-animation {
+    animation: victoryPulse 1s ease-in-out;
+  }
+  
+  /* Element glow based on state */
+  .element-default {
+    transition: all 0.3s ease;
+  }
+  
+  .element-current {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+  }
+  
+  .element-compared {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.7);
+  }
+  
+  .element-swapping {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.7);
+  }
+  
+  .element-sorted {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+  }
+  
+  /* Circle view animations */
+  .node-connection {
+    stroke-dasharray: 10;
+    animation: dash 20s linear infinite;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 1000;
+    }
+  }
+  
+  /* Array view movement animations */
+  .array-element {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .array-swap {
+    z-index: 20;
+  }

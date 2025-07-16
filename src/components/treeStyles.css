@@ -1,0 +1,47 @@
+/* Tree visualization specific styles */
+.tree-container {
+    overflow: auto;
+    position: relative;
+  }
+  
+  .tree-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .tree-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .tree-container::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    border-radius: 10px;
+  }
+  
+  .tree-container::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+  }
+  
+  .tree-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+  }
+  
+  .tree-node:hover {
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tree-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
